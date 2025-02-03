@@ -1,5 +1,5 @@
 namespace ScreenSound.Models;
-class Album
+internal class Album
 {
     private List<Music> musics = new List<Music>();
     public string Name { get; set; }
@@ -19,7 +19,7 @@ class Album
 
     public void ShowAlbumInfo()
     {
-        Console.WriteLine($"\nAlbum: {Name}");
+        Console.WriteLine($"Album: {Name}");
         Console.WriteLine($"Total Duration: {TotalDuration}m");
         Console.WriteLine("\nMusics:");
         foreach (Music music in musics)

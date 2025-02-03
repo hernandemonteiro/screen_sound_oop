@@ -2,31 +2,32 @@
 
 class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
         Band band1 = new Band("Vicetone");
-        Band band2 = new Band("João Gomes");
-        Music[] musics = { new Music("Astronomia", band1, 195, true), new Music("Meu Dengo", band2, 180, false) };
-
+        band1.AddStars(5);
+        band1.AddStars(4);
+        band1.AddStars(3);
         Album album = new Album("Top 1");
-        Album album2 = new Album("Top 2");
-        foreach (Music music in musics)
-        {
-            if (music.Artist.Name == "Vicetone")
-            {
-                album.AddMusic(music);
-            }
-            else
-            {
-                album2.AddMusic(music);
-            }
-        }
-
+        album.AddMusic(new Music("Astronomia", band1, 195, true));
         band1.AddAlbum(album);
-        band2.AddAlbum(album2);
 
-        band1.ShowDiscography();
-        band2.ShowDiscography();
+        Band band2 = new Band("João Gomes");
+        band2.AddStars(5);
+        band2.AddStars(5);
+        band2.AddStars(4);
+        Album album2 = new Album("Top 2");
+        album2.AddMusic(new Music("Meu Dengo", band2, 180, false));
+        band1.AddAlbum(album2);
+
+        Band[] bands = { band1, band2 };
+
+
+        foreach (Band band in bands)
+        {
+            band.ShowDiscography();
+            band.ShowStars();
+        }
     }
 
 }

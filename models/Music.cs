@@ -1,5 +1,5 @@
 namespace ScreenSound.Models;
-class Music
+internal class Music
 {
     public string Name { get; }
     public Band Artist { get; }
@@ -35,9 +35,9 @@ class Music
 
     public void ShowMusicInfo()
     {
-        Console.WriteLine($"\nName: {Description}");
+        Console.WriteLine($"Name: {Description}");
         Console.WriteLine($"Duration: {Duration}{(formattedDuration ? "m" : "s")}");
         Console.WriteLine($"Artist: {Artist.Name}");
-        Console.WriteLine($"Available: {(Available ? "Yes" : "No")}");
+        Console.WriteLine($"Available: {(Available ? "Yes" : "No")}\n");
     }
 }
